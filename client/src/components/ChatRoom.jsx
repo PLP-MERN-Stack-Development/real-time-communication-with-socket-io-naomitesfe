@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './ChatRoom.css';
+import TypingIndicator from './TypingIndicator';
 
 export default function ChatRoom({ username, socketData }) {
   const [message, setMessage] = useState('');
@@ -37,7 +38,7 @@ export default function ChatRoom({ username, socketData }) {
         </div>
 
         {socketData.typingUsers.length > 0 && (
-          <p className="typing">{socketData.typingUsers.join(', ')} typing...</p>
+          <TypingIndicator typingUsers={socketData.typingUsers} />
         )}
 
         <form onSubmit={handleSend} className="chat-form">

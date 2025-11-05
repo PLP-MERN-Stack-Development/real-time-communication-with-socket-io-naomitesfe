@@ -92,6 +92,16 @@ io.on('connection', (socket) => {
     socket.to(to).emit('private_message', messageData);
     socket.emit('private_message', messageData);
   });
+     // Handle joining a room
+socket.on("join_room", (roomName) => {
+  socket.join(roomName);
+  console.log(`${users[socket.id]?.username} joined room: ${roomName}`);
+  socket.emit("system_message", {
+    id: Date.now(),
+    system: true,
+    message: `You joined room: ${roomName}`,
+  });
+});
 
   // Handle disconnection
   socket.on('disconnect', () => {
