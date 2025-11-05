@@ -32,9 +32,10 @@ A modern chat application built with **React** and **Socket.IO** featuring:
 ## **Screenshots**
 
 ![Login](./screenshots/login.png)
-![Chat Rooms](./screenshots/chatroom.png)
 ![Home Page](./screenshots/HOMEPAGE.png)
 ![Chat](./screenshots/chat.png)
+![Chat Rooms](./screenshots/chatroom.png)
+![Chat Rooms](./screenshots/chatroom2.png)
 
 ---
 
@@ -53,7 +54,7 @@ npm install
 ```bash
 npm start
 ```
-Open http://localhost:3000
+Open http://localhost:5173
  in your browser.
 
 ## Usage
