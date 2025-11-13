@@ -13,9 +13,23 @@ dotenv.config();
 // Initialize Express app and server
 const app = express();
 const server = http.createServer(app);
+
+// Allowed origins for CORS
+const allowedOrigins = [
+  'http://localhost:5173', // local dev
+  'https://real-time-communication-with-socket-rose.vercel.app' // deployed frontend
+];
+
+// Initialize Socket.IO server
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('CORS not allowed'));
+      }
+    },
     methods: ['GET', 'POST'],
     credentials: true,
   },
