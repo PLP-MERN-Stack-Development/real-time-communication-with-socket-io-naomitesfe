@@ -8,6 +8,12 @@ A modern chat application built with **React** and **Socket.IO** featuring:
 - User **sign-out** functionality
 
 ---
+## Live Demo
+
+- Frontend (Vercel): https://real-time-communication-with-socket-rose.vercel.app/
+
+- Backend (Render): https://week5-chat-backend-61ui.onrender.com
+
 
 ## **Features**
 
