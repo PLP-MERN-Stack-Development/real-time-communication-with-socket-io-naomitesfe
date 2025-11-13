@@ -4,7 +4,7 @@ import ChatRoom from "./ChatRoom";
 import UserList from "./UserList"; // Make sure default export exists
 import NotificationPanel from "./NotificationPanel"; // Make sure default export exists
 import PrivateChat from "./PrivateChat"; // Make sure default export exists
-import "./ChatRoom.css";
+import "./chatRoom.css";
 
 export default function ChatApp({ username, socketData }) {
   const [currentRoom, setCurrentRoom] = useState(null);
