@@ -1,0 +1,177 @@
+/* =========================
+   Chat Container
+   ========================= */
+.chat-container {
+  display: flex;
+  flex-direction: column; /* stack on mobile */
+  gap: 10px;
+  padding: 10px;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5; /* light gray background */
+  color: #000;
+}
+
+/* Left panel: messages + input */
+.chat-left {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  gap: 10px;
+  min-height: 0; /* allow proper scrolling */
+}
+
+/* =========================
+   Messages Area
+   ========================= */
+.chat-messages {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff; /* white background for messages */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Sent / received messages */
+.user-msg {
+  background-color: #d0f0fd; /* light blue bubble */
+  color: #000; /* black text */
+  padding: 6px 12px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.system-msg {
+  font-style: italic;
+  color: #555; /* gray text for system messages */
+  margin-bottom: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Input Form
+   ========================= */
+.chat-form {
+  display: flex;
+  gap: 5px;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  color: #000; /* typed text is visible */
+}
+
+.chat-form input::placeholder {
+  color: #aaa;
+}
+
+.chat-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.chat-form button:hover {
+  background-color: #0056b3;
+}
+
+/* =========================
+   Users Sidebar
+   ========================= */
+.chat-users {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  min-width: 150px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #000; /* user names visible */
+}
+
+.chat-users h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.chat-users ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chat-users li {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #e3e3e3;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Typing indicator */
+.typing {
+  font-style: italic;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* =========================
+   Desktop Layout
+   ========================= */
+@media screen and (min-width: 768px) {
+  .chat-container {
+    flex-direction: row; /* left + right panels side by side */
+  }
+
+  .chat-left {
+    flex: 3;
+    gap: 10px;
+  }
+
+  .chat-users {
+    flex: 1;
+    margin-left: 10px;
+    max-height: none;
+  }
+
+  .chat-form {
+    flex-direction: row; /* input + button side by side */
+  }
+}
+
+/* =========================
+   Scrollbar Styling
+   ========================= */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.chat-users::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-users::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
